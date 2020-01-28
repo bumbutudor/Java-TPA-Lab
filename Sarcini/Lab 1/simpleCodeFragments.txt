@@ -1,0 +1,63 @@
+﻿/* 
+	este un program simplu
+*/
+class Example {
+// programul începe cu apelul metodei main()
+	public static void main (String args[]) {
+		System.out.println(“Program simplu Java”);
+	}
+} 
+
+
+___________________________________________________________
+
+
+/*
+	Încă un program java
+*/
+class Example2 {
+	public static void main(String args[]) {
+		int num;
+		num=100;
+		System.out.println(“Variabila num:” + num);
+		num=num*2;
+		System.out.print(“Valoarea variabile num*2 este egal cu ”);
+		System.out.println(num);
+	}
+}
+
+
+___________________________________________________________________
+//Convertirea carcaterului in string
+class CharToStringDemo
+{
+   public static void main(String args[])
+   {
+      // Methoda 1: Folosind metoda toString() 
+      char ch = 'a';
+      String str = Character.toString(ch);
+      System.out.println("Stringul este: "+str);
+ 
+      // Methoda 2: Folosind metoda valueOf()
+      String str2 = String.valueOf(ch);
+      System.out.println("String is: "+str2);
+   }
+}
+
+
+__________________________________________________
+
+
+// pozitia caracterului
+class StringToCharDemo
+{
+   public static void main(String args[])
+   {
+      // Folosind metoda charAt() 
+      String str = "Hooooillo";
+      for(int i=0; i<str.length();i++){
+        char ch = str.charAt(i);
+        System.out.println("Pozitia "+i+" al caracterului "+ch);
+      } 
+   }
+}
