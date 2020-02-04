@@ -1,0 +1,4 @@
+Varianta 2: 
+2. Fiecare litera din textul dat, sa fie înlocuită cu poziţia numerică din alfabet.
+Textul sa se scrie într-o singură linie cu doua spatii intre litere. 
+In linia  următoarea  sub fiecare literă sa se indice poziţia. 
