@@ -1,3 +1,6 @@
+//Laborator cu vrianta 8
+//8. Afişaţi de câte ori sunt repetate cuvintele care apar în textul dat. 
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.Scanner;
