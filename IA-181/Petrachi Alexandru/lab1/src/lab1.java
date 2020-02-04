@@ -1,3 +1,5 @@
+//Laborator 1
+//Varianta 8
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.Scanner;
