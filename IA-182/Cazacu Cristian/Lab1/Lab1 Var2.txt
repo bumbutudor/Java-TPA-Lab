@@ -1,0 +1,31 @@
+import java.util.Scanner;
+ 
+public class Main {
+ 
+    public static void main(String[] args) {
+        String alphabet =("abcdefghijklmnopqrstuvwxyz");
+        // textul - alfabet (er. 0)
+        String str1 = "abcdefghijklmnopqrstuvwxyz";
+        System.out.println("Introduceti textul");
+        Scanner sc1 = new Scanner(System.in);
+        str1 = sc1.nextLine();
+        	// Transformarea sirului -> Char
+                char[] charArray = str1.toCharArray();
+        // Introducerea textului
+        for(int i = 0; i < str1.length(); i++){
+            System.out.print(charArray[i] + "  ");
+        }
+        System.out.println("");
+        // Extr. cifrelor
+        for (char x : charArray){
+	// Ignorarea spatiilor libere
+            if(x == ' '){
+                System.out.print("");
+            } else {
+            int i = alphabet.lastIndexOf(x);
+            i+=1;
+            System.out.print(i + "  ");
+   } 
+   }
+  } 
+}

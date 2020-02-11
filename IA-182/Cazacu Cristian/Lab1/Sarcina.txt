@@ -1,0 +1,5 @@
+Lab 1.
+Var 2.
+Fiecare litera din textul dat, sa fie inlocuita cu pozitia numerica din alfabet.
+Textul sa se scrie intr-o singura linie cu doua spatii intre litere. In linia  urmatoarea sub fiecare 
+litera sa se indice pozitia. 
