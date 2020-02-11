@@ -1,0 +1,39 @@
+package vadim;
+import java.lang.*; 
+class Insert { 
+  
+    // Functia pentru inserarea sirului
+    public static String insertString( String originalString, String stringToBeInserted, int index) 
+    { 
+  
+        // Crearea unui sir
+        String newString = new String(); 
+  
+        for (int i = 0; i < originalString.length(); i++) { 
+  
+            // Inserarea sirului original de caractere in sirul nou
+            newString += originalString.charAt(i); 
+  
+            if (i == index) { 
+                newString += stringToBeInserted; 
+            } 
+        } 
+  
+        // returnarea sirului modificat
+        return newString; 
+    } 
+  
+    public static void main(String[] args) 
+    { 
+        String originalString = "Maria este cea mai buna"; 
+        String stringToBeInserted = " Ivanovna"; 
+        int index = 4; 
+  
+        System.out.println("Original String: "+ originalString); 
+        System.out.println("String to be inserted: "+ stringToBeInserted); 
+        System.out.println("String to be inserted at index: "+ index); 
+  
+      
+        System.out.println("Modified String: "+ insertString(originalString, stringToBeInserted, index)); 
+    } 
+} 
