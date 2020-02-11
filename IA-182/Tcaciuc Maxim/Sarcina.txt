@@ -1,0 +1,2 @@
+Varianta 10. 
+Din textul dat găsiţi şi extrageţi numărul de cuvinte care încep şi se finalizează  cu vocale. 
