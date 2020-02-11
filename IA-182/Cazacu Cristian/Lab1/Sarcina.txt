@@ -3,3 +3,8 @@ Var 2.
 Fiecare litera din textul dat, sa fie inlocuita cu pozitia numerica din alfabet.
 Textul sa se scrie intr-o singura linie cu doua spatii intre litere. In linia  urmatoarea sub fiecare 
 litera sa se indice pozitia. 
+
+Concluzie:
+Efectuand acest laborator am folosit clasa String care contine constructorii String (), 
+String (String str.), String (char [] c). Acesti constructori am folosit pentru a initializa obiectele din
+clasa si pentru a lucra cu siruri de caractere.
