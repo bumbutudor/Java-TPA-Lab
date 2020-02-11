@@ -4,7 +4,8 @@ public class CharToStringDemo
    {
       // Methoda 1: Folosind metoda toString() 
       char ch = 'a';
-      String str = Character.toString(ch);
+      String str;
+	  str = Character.toString(ch);
       System.out.println("Stringul este: "+str);
  
       // Methoda 2: Folosind metoda valueOf()
