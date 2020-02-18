@@ -1,0 +1,6 @@
+In urma efectuarii lucrarii de laborator nr2 noi am :
+	Insusit principiile de supraîncărcare a functilor.
+	Insusit principiile de suprascriere a functilor.
+	Insusit principiile de folosirea constructoarelor.
+	Insusit principiile de mostenire.
+	La efectuarea lucrarii de laborator probleme nu au aparut.

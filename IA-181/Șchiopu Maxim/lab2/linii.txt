@@ -1,0 +1,18 @@
+class Linie
+{
+    protected int nr_linii;
+    protected double nr_linii_d;
+    
+    public Linie()
+    {   nr_linii=0;nr_linii_d=0;     }
+    public Linie(int x)
+    {   nr_linii=x;nr_linii_d=0;     }
+    public Linie(double x)
+    {   nr_linii_d=x;nr_linii=0;     }
+    
+    public void show()
+    {
+        if(nr_linii==0)System.out.println("Nr de linii : "+nr_linii_d+"\n");
+        else System.out.println("Nr de linii : "+nr_linii+"\n");
+    }
+}
