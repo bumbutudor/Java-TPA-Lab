@@ -1,0 +1,17 @@
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+ 
+public class Main {
+ 
+    public static void main(String[] args) {
+        String text = "ana octaviano este cu iou cine a fost si nu va mai fi  nu va fi aici.";
+        String[] wordArray = text.split("[\\s,.:!?]+");
+        Pattern pattern = Pattern.compile("^[aeiou].*[aeiou]$");
+        for (String word : wordArray) {
+            Matcher matcher = pattern.matcher(word);
+            if (matcher.find()) {
+                System.out.println(word);
+            }
+        }
+    }
+}
