@@ -1,0 +1,15 @@
+public class main
+{
+    public static void main(String[] args) {
+    Linie l = new Linie(20);
+    l.show();
+    Pagina p=new Pagina(10,30);
+    p.show();
+    
+    Linie l2=new Linie(20.20);
+    l2.show();
+    Pagina p2=new Pagina(10.10,30.30);
+    p2.show();
+   
+    }  
+}

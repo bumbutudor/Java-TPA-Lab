@@ -1,0 +1,4 @@
+In urma efectuarea lucrarii de laborator nr 1 noi am :
+	Insusit modalitatea de creare a claselor si obiectelor în Java.
+	Insusit modalitatea de prelucrare a şirurilor de caractere.
+	La efectuarea lucrarii de laborator nu au aparut probleme.

@@ -1,0 +1,20 @@
+public class Pagina extends Linie
+{
+    protected int nr_pag;
+    protected double nr_pag_d;
+    
+    public Pagina()
+    {   super(0); nr_pag=0;nr_pag_d=0;    }
+    public Pagina(int x,int y)
+    {   super(y);nr_pag=x;nr_pag_d=0;     }
+    public Pagina(double x,double y)
+    {   super(y);nr_pag=0;nr_pag_d=x;     }
+    
+    public void show()
+    {
+        if(nr_pag==0)System.out.println("Nr de pag : "+nr_pag_d);
+        else System.out.println("Nr de pag : "+nr_pag);
+        super.show();
+    }
+
+}
