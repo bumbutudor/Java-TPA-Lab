@@ -1,4 +1,5 @@
 import java.util.Scanner; // Import the Scanner class
+import java.util.StringTokenizer;
 
 class ReplaceAll {
     public static void main(String[] args) {
@@ -10,15 +11,23 @@ class ReplaceAll {
         Scanner num = new Scanner(System.in);  // Create a Scanner object
         System.out.println("Introduceti lungimea cuvintului pe care doriti sa-l modificati");
         int lung = num.nextInt();
-        Schimbare(text,lung);
+
+
+        Schimbare(text, lung);
 
     }
-    public static void Schimbare(String text, int lung){
+    public static void Schimbare(String text, int lung) {
         String[] tokens = text.split(" ");
-        for (String token : tokens)
+        for (String token : tokens) {
             if ((token.length() == lung)) {
-                String replaceString = text.replaceAll(token, "Gabi");
-                System.out.println(replaceString);
+                //System.out.println(token);
+                tokens[token] = "";
+                    System.out.println(token);
+
             }
+        }
+        for ( String a : tokens){
+            System.out.print(a + " ");
+        }
     }
 }
