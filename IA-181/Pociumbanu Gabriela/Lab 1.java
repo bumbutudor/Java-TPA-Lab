@@ -10,9 +10,11 @@ class ReplaceAll {
         Scanner num = new Scanner(System.in);  // Create a Scanner object
         System.out.println("Introduceti lungimea cuvintului pe care doriti sa-l modificati");
         int lung = num.nextInt();
+        Schimbare(text,lung);
 
+    }
+    public static void Schimbare(String text, int lung){
         String[] tokens = text.split(" ");
-
         for (String token : tokens)
             if ((token.length() == lung)) {
                 String replaceString = text.replaceAll(token, "Gabi");
