@@ -1,6 +1,8 @@
 package com.company;
 
 
+import java.util.Scanner;
+
 public class Main {
 
     public static void print(String a, String b){
@@ -9,17 +11,18 @@ public class Main {
     }
 
     public static void main(String[] args) {
-	   System.out.println("Hello, Ion!");
+        Scanner myObj = new Scanner(System.in);  // Create a Scanner object
+        System.out.println("Introduceti textul");
+        String text = myObj.nextLine();  // Read user input
+        System.out.println("Textul introdus este: " + text);  // Output user input
+
+        Scanner num = new Scanner(System.in);  // Create a Scanner object
+        //System.out.println("Introduceti lungimea cuvintului pe care doriti sa-l modificati");
+        //int lung = num.nextInt();
 
 
-
-
-	   char c = 'i';
-
-	   String a = String.valueOf(c);
-	   String b = Character.toString(c);
-	   print(a,b);
-
+        // ReplaceString.Schimbare(text, lung);
+        BeginEngMatching.firstLastMatch(text);
 
 
     }
