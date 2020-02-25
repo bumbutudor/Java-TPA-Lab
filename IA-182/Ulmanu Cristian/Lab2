@@ -1,0 +1,101 @@
+package lab2tap;
+import java.util.Scanner;
+import java.io.*;
+
+class Litere
+{
+	char litera;
+	public Litere()
+	{
+	litera='a';	
+	}
+	public Litere(char litera)
+	{
+		this.litera=litera;
+	}
+	public char setCase() {
+	return Character.toLowerCase(this.litera);
+	}
+	public char set() {
+		return this.litera;
+	}
+	public char setCase(int i) {
+		return Character.toUpperCase(this.litera);
+		}
+}
+class Cuvinte{
+	public
+	String prop="";
+	int numar;
+	Litere [] mullitere=new Litere[100];
+	public Cuvinte()
+	{
+	prop="default";
+	numar=0;
+	
+	}
+	public Cuvinte(int nr) throws IOException
+	{
+		numar=nr;
+		for (int i=0;i<nr;i++)
+		{
+			System.out.println("Dati litera:");
+			
+			BufferedReader br=new BufferedReader (new InputStreamReader(System.in));
+			String s=br.readLine();
+	         
+			char litera=s.charAt(0);
+			mullitere[i]=new Litere(litera);
+			
+			
+		}
+		
+	}
+	public String set()
+	
+	{
+		for (int i=0;i<numar;i++)
+		{
+			prop+=(mullitere[i].set());
+		}
+		System.out.println(prop);
+		return this.prop;
+	}
+	public String SetCase()
+	{
+		prop="";
+		for (int i=0;i<numar;i++)
+		{
+			prop+=(mullitere[i].setCase());
+		}
+		System.out.println(prop);
+		return this.prop;
+	}
+	public String SetCase(int j)
+	{
+		prop="";
+		for (int i=0;i<numar;i++)
+		{
+			prop+=(mullitere[i].setCase(i));
+		}
+		System.out.println(prop);
+		return this.prop;
+	}
+	
+}
+public class lab2 {
+
+	public static void main(String [] args) throws IOException {
+		Scanner in = new Scanner(System.in);
+	    System.out.println("Al doilea program");
+	        int n;
+	   System.out.println("Nr de litere");
+	        n = in.nextInt();
+	        Cuvinte par = new Cuvinte(n);
+	        par.set();
+	       
+	        par.SetCase(5);
+	        par.SetCase();
+
+	}
+}
