@@ -1,0 +1,47 @@
+import java.util.Scanner;
+
+public class lab2 {
+	static class Paragraf{
+    	String numcar;
+        int nrpag;
+        public Paragraf(String n, int a){          
+        	numcar=n;
+        	nrpag=a;
+        }   
+        public Paragraf(){                  
+        	System.out.println("Introduceti numele cartii ->");
+            Scanner s = new Scanner(System.in);
+            numcar = s.nextLine();
+            System.out.println("Introduceti pagina ->");
+            Scanner i = new Scanner(System.in);
+            nrpag = i.nextInt();
+        }
+        public void show(){                 
+            System.out.println("Numele cartii -> " + numcar);
+            System.out.println("Numarul paginii -> " + nrpag);
+        }
+    }
+    static class Pagina extends Paragraf{
+        int prop;
+        Pagina(String n, int a, int b){
+        	super(n,a);
+        	prop=b;
+        }   
+        Pagina(){                                   
+            System.out.println("Introduceti numarul de propozitii ->");
+            Scanner i = new Scanner(System.in);
+            prop = i.nextInt();
+        }
+    public void show(){
+    		super.show();
+            System.out.println("Pagina are " + prop + " propozitii");
+        }
+    }
+    public static void main(String[] args) {
+        Paragraf par = new Paragraf();
+        Pagina pag = new Pagina();
+        par.show();
+        pag.show();
+        
+    }
+}
