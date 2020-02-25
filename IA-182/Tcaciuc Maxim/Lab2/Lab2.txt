@@ -1,0 +1,50 @@
+
+Varianta 10:
+
+
+package com.company.java;
+
+class Main {
+
+    public static void main(String[] args) {
+        Carte obj1=new Carte ("Luceafarul", "Mihai Eminescu", 600);
+        obj1.print ();
+        Biblioteca obj2=new Biblioteca ("Library01",2000  );
+        obj2.print ();
+    }
+}
+
+public class Biblioteca {
+    String namelib;
+    int nrBooks;
+    public Biblioteca(){
+        namelib=null;
+        nrBooks=0;
+    }
+    public Biblioteca(String namelib,int nrBooks){
+        this.namelib=namelib;
+        this.nrBooks=nrBooks;
+    }
+    public void print(){
+        System.out.println("Biblioteca: " + namelib +", numarul de exemplare :" + nrBooks);
+    }
+} class Carte extends  Biblioteca {
+    String name;
+    String author;
+    int pag;
+
+    Carte(){
+        name=null;
+        author=null;
+        pag=0;
+    }
+    Carte(String name,String author,int pag){
+        this.name=name;
+        this.author=author;
+        this.pag=pag;
+    }
+    public void print(){
+        System.out.println ("Denumirea:"+ name +". Autorul:"+ author +". Numarul de pagini:"+ pag);
+    }
+}
+
