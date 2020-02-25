@@ -1,0 +1,4 @@
+În cadrul elaborării lucrării de laborator nr2 eu m-am familiarizat cu noțiunile de supraîncărcare și suprascriere în limbajul Java.
+Eu am creat clasa Litere unde am supraîncărcat metoda setCase care se deosebea prin prezența unui parametru. În clasa Cuvinte eu am utilizat 
+un tablou de Litere pentru a înscrie fiecare literă și după aceea de a le concatena într-un string care reprezintă cuvântul din aceste litere.
+Am suprascris metodele setCase și set din clasa Litere.
