@@ -1,0 +1,1 @@
+In urma efectuarii lucrarii de laborator noi am insusit principiile de supraincarcare a functiilor, principiile de suprascriere a functiilor, principiile de folosire a constructoarelor si principiile de mostenire.

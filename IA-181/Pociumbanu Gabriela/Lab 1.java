@@ -1,3 +1,4 @@
+import java.lang.reflect.Array;
 import java.util.Scanner; // Import the Scanner class
 import java.util.StringTokenizer;
 
@@ -11,23 +12,23 @@ class ReplaceAll {
         Scanner num = new Scanner(System.in);  // Create a Scanner object
         System.out.println("Introduceti lungimea cuvintului pe care doriti sa-l modificati");
         int lung = num.nextInt();
-
-
         Schimbare(text, lung);
-
     }
     public static void Schimbare(String text, int lung) {
         String[] tokens = text.split(" ");
-        for (String token : tokens) {
-            if ((token.length() == lung)) {
-                //System.out.println(token);
-                tokens[token] = "";
-                    System.out.println(token);
-
+        // inlocuirea cuvintelor de lungimea specificata
+        for(int i = 0; i < tokens.length; i++){
+            if(tokens[i].length() == lung){
+                tokens[i] = "Gabi";
             }
         }
+        // afisare
         for ( String a : tokens){
             System.out.print(a + " ");
         }
     }
 }
+/* Laboratorul nr.1 a fost nu chiar complicat, dar am avut o problema cu metoda replaceAll(). Dar multumita acestui
+laborator am inteles mai bine cum metoda lucreaza si de ce nu mi se potriveste la rezolvarea sarcinii date, in modul
+in care am abordat-o.
+ */
