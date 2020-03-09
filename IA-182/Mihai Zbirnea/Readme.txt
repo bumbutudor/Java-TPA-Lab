@@ -17,6 +17,7 @@ paradigmei programării orientate pe obiecte - polymorphism.
 
 Lab 3:
 Link - https://github.com/civera17/Lab3TAP
+Android - https://github.com/civera17/Lab3TPA
 
 Lab 3 Concluzie :
 Am însușit paradigma de inheritance și limitările ce le presupune pentru child-class , deci fiecare
