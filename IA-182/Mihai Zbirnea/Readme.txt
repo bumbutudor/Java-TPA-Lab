@@ -27,4 +27,15 @@ codului , dar aduce o dependență strictă între parent și child class , asta
 este rezolvat în Spring prin Dependency Injection . În situația proiectelor enterprise dependența între clase
 este o problemă , căci proiectele sunt foarte mari.
 
+Lab 4:
+Link - https://github.com/civera17/Lab4Java
+
+Lab 5:
+Link - https://github.com/civera17/Lab5Java
+
+Lab 6:
+Link - https://github.com/civera17/Lab1Grafica
+
+
+
 
