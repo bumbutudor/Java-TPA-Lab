@@ -1,0 +1,1 @@
+8. Sa se creeze obiectul clasa «Text», folosind clasa «Paragraf».
