@@ -1,0 +1,5 @@
+În această lucrare de laborator am utilizat principiul mostenirii. Am creat 3 superclase si 3 subclase, superclasele reprezentau 3 figuri 
+geometrice iar subclasele reprezintă corpurile geometrice care derivă din figurile alese. Programul calculează perimterul, aria figurii geometrice 
+și volumul și suprafața totală a corpului geometric. Aplicația are o interfață grafică alcătuită din radio-butoane, label-uri, textfield-uri
+textarea și butoane. Elaborând aplicația mi-am aprofundat cunoștințele în utilizarea principiului moștenirii și în elaborarea unei interfețe 
+grafice funcționale.
