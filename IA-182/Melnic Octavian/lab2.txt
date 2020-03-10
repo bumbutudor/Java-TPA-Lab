@@ -1,0 +1,66 @@
+/* 3.Sa se creeze obiectul clasa «Pagina», folosind clasa «Paragraf».*/
+
+package com.company.java;
+
+import java.util.Scanner;
+
+public class lab2 {
+
+    static class Paragraf{
+
+        String numele;
+
+        public Paragraf(String a){
+            numele=a;
+        }   //
+        public Paragraf(){
+
+            System.out.println("Introdu numele paragrafului:");
+
+            Scanner s = new Scanner(System.in);
+            numele = s.nextLine();
+        }
+
+        public void show(){                 //
+            System.out.print("Numele paragrafului este: " + numele);
+        }
+
+    }
+
+    static class Pagini extends Paragraf{
+
+        int pagini;
+
+        Pagini(int b) {
+            pagini=b;
+        }   //
+        Pagini(){                                   //
+            System.out.println("Introdu nr. de pagini a paragrafulul:");
+
+            Scanner s = new Scanner(System.in);
+            pagini = s.nextInt();
+        }
+
+        public void show(){
+            super.show();//
+            System.out.println(" si are " + pagini + " pagini  ");
+        }
+    }
+
+    public static void main(String[] args) {
+        Paragraf p1 = new Paragraf();
+        Paragraf p2 = new Paragraf("dfgsdhgfk");
+        Pagini a1 = new Pagini();
+        Pagini a2 = new Pagini(20);
+
+        p1.show();
+        p2.show();
+        a1.show();
+        a2.show();
+    }
+}
+
+Prin intermediul acestui laborator am creat un program, care are o superclasa, care este mostenita de subclasa data din conditie. 
+Fiecare din aceste clase are variabile si constructori, cu care initializam obiectul. Programul a fost un bun stimul pentru a intari abilitatile teoretice
+in practica.
+ 

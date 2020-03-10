@@ -1,0 +1,1 @@
+In concluzie pot spune că prin clasa String punem efectua unele acțiuni de numărare a cuvintelor cu ajutorul constructorilor și a metodelor clasei.

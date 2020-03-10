@@ -1,0 +1,71 @@
+package com.company;
+
+public class Main
+{
+    public static void main(String[] args)
+    {
+        //тест
+        Text obj1 = new Text(1.5,  10,1);
+        Text obj2 = new Text (1,5,2);
+        obj1.toParagraph();
+        obj1.changeParagraph(12,1,5);
+        obj1.toParagraph();
+        System.out.println("-------------------------------------------------------------------");
+
+        obj2.toParagraph();
+        obj2.changeParagraph(7,2,4);
+        obj2.toParagraph();
+
+    }
+}
+
+class Paragraph
+{
+    int lines;
+    Paragraph()
+    {
+         lines = 10;
+    }
+    Paragraph(int num)
+    {
+        lines = num;
+    }
+
+    void toParagraph()
+    {
+        System.out.print("Paragraph has " + " " + lines +" " + "lines");
+    }
+}
+
+class Text extends Paragraph
+{
+    double depth;
+    int paragraph_num;
+    Text()
+    {
+        super();
+        depth = 1.5;
+        paragraph_num = 1;
+    }
+    Text(int num)
+    {
+        super(num);
+    }
+    Text(double Depth, int num,int paragraph_number)
+    {
+        super(num);
+        depth = Depth;
+        paragraph_num = paragraph_number;
+    }
+    void changeParagraph(int newLines,double newDepth,int newParagraph)
+    {
+        super.lines = newLines;
+        depth = newDepth;
+        paragraph_num = newParagraph;
+    }
+    void toParagraph()
+    {
+        super.toParagraph();
+        System.out.println(" "+"number of paragraph is" +" " + paragraph_num+" "+"and" + " " + depth + " " + "depth");
+    }
+}

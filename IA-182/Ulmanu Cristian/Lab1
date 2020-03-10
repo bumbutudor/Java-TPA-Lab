@@ -1,0 +1,39 @@
+   int pos=0;
+
+         char ch1, ch2;
+
+         String w;
+
+
+         for(int i=0; i<l; i++)
+
+         {
+
+             ch1 = s.charAt(i);
+
+             if(ch1 == ' ')
+
+             {
+
+                 w = s.substring(pos,i); 
+                 if(w.length()==nr) {
+
+                 ch2 = w.charAt(0);
+
+                 if(ch2!='A' && ch2!='E' && ch2!='I' && ch2!='O' && ch2!='U' &&
+
+                 ch2!='a' && ch2!='e' && ch2!='i' && ch2!='o' && ch2!='u')
+
+                 {
+
+                     System.out.println(w);
+
+                 }
+                 }
+
+                 pos = i+1;
+
+           
+             }
+
+         }

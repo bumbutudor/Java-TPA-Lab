@@ -1,0 +1,4 @@
+  In cadrul elaborării lucrării de laborator nr1 eu am făcut cunoștință cu tipul de date String în cadrul limbajului Java. 
+  Am utilizat Buffered Readerpentru a introduce datele de la tastatură și am utilizat Integer.parseInt pentru a converti datele din 
+  String în Integer. În cadrul lucrării am utilizat asemenea opțiuni din String ca length, substring, charAt.
+  
