@@ -1,0 +1,41 @@
+
+Varianta 9:
+
+class useTime{
+    private int ora, minute, secunde;
+    void setTime(){
+        ora = (int) (((System.currentTimeMillis() / 1000) / 60) / 60) % 24;
+        minute = (int) ((System.currentTimeMillis() / 1000) / 60) % 60;
+        secunde = (int) (System.currentTimeMillis() / 1000) % 60;
+    }
+    void getTime(){
+        System.out.println(ora+":"+minute+":"+secunde);
+    }
+}
+
+class Stack extends useTime {
+
+    private void createStack(){
+        /*
+       crearea Stack
+         */
+        setTime();
+    }
+
+    private void showStack(){
+        /*
+         afisarea Stack
+         */
+
+        System.out.print("Timpul in care a fost creat: ");
+        getTime();
+    }
+
+    public static void main(String[] args){
+        Stack stiva = new Stack();
+
+        stiva.createStack();
+        stiva.showStack();
+
+    }
+}
