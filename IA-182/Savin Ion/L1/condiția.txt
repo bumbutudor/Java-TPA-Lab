@@ -1,0 +1,1 @@
+8. Afişaţi de câte ori sunt repetate cuvintele care apar în textul dat. 

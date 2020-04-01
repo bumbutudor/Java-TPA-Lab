@@ -17,6 +17,7 @@ paradigmei programării orientate pe obiecte - polymorphism.
 
 Lab 3:
 Link - https://github.com/civera17/Lab3TAP
+Android - https://github.com/civera17/Lab3TPA
 
 Lab 3 Concluzie :
 Am însușit paradigma de inheritance și limitările ce le presupune pentru child-class , deci fiecare
@@ -25,5 +26,19 @@ child-class nu poate avea default constructor daca super clasa nu are. Moștenir
 codului , dar aduce o dependență strictă între parent și child class , asta este un neajuns care
 este rezolvat în Spring prin Dependency Injection . În situația proiectelor enterprise dependența între clase
 este o problemă , căci proiectele sunt foarte mari.
+
+Lab 4:
+Link - https://github.com/civera17/Lab4Java
+
+Lab 5:
+Link - https://github.com/civera17/Lab5Java
+
+Lab 6:
+Link - https://github.com/civera17/Lab1Grafica
+
+Lab 7:
+Link - https://github.com/civera17/Lab5Java (Aici am facut si 5 si 7 , ambele task cu Stack)
+
+
 
 

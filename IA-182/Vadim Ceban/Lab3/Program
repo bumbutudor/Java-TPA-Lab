@@ -1,0 +1,106 @@
+package vadim;
+
+import javax.swing.JFrame;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.*;
+import javax.swing.ImageIcon;
+import java.awt.*;
+
+class Data {
+	 int ziua;
+	 String luna;
+	 
+	public Data (int ziua, String luna) {
+		this.ziua=ziua;
+		this.luna=luna;
+	}
+ }
+ 
+ class Anotimp extends Data{
+	   
+	   
+	public Anotimp(int ziua, String luna) {
+		super(ziua,luna);
+		
+	}
+	public String getano()
+	{
+		
+		if (luna.equalsIgnoreCase("decembrie")||luna.equalsIgnoreCase("ianuarie")||luna.equalsIgnoreCase("februarie")) 
+		{
+			return "Iarna";	
+		}
+		else if (luna.equalsIgnoreCase("martie")||luna.equalsIgnoreCase("aprilie")||luna.equalsIgnoreCase("mai")) 
+		{
+			return "Primavara";
+		}
+		else if(luna.equalsIgnoreCase("iunie")||luna.equalsIgnoreCase("iulie")||luna.equalsIgnoreCase("august")) 
+		{   
+			return "Vara";
+		}
+		else if(luna.equalsIgnoreCase("septembrie")||luna.equalsIgnoreCase("octombrie")||luna.equalsIgnoreCase("noiembrie")) 
+		{
+			return "Toamna";
+		}
+		else return "nimic";
+		
+	}
+ 
+}
+ class Iter extends JFrame{
+	 JButton jbt;
+	 JTextField x1;
+	 JTextField x2;
+	 JLabel a1;
+	 JLabel a2;
+	 JLabel a3;
+	 ImageIcon icon;
+	 
+	 public Iter () {
+		 this.setLayout(null);
+		 a1=new JLabel("Introduceti ziua");
+		 a2=new JLabel("Introduceti luna");
+		 a3=new JLabel("");
+		 x1=new JTextField(10);
+		 x2=new JTextField(10);
+		 a1.setBounds(30, 20, 150, 20);
+		 this.add(a1);
+		 x1.setBounds(150, 20, 100, 20);
+		 this.add(x1);
+		 a2.setBounds(290,20,100,20);
+		 this.add(a2);
+		 x2.setBounds(400, 20, 100, 20);
+		 this.add(x2);
+		 jbt=new JButton("Executa");
+		 jbt.setBounds(250, 60, 80, 30);
+		 this.add(jbt);
+		 a3.setBounds(250, 100, 100, 20);
+		 this.add(a3);
+		 jbt.addActionListener(new ActionListener()
+				 {
+			 public void actionPerformed(ActionEvent e) {
+				 int ziua=Integer.parseInt(x1.getText());
+				 String luna=x2.getText();
+				 Anotimp a=new Anotimp(ziua,luna);
+				 a3.setText(a.getano());
+			 }
+				 }
+				 ); 
+	 }
+	 
+ }
+ class Lab3 {
+	 public static void main(String[]args) {
+		Iter n=new Iter();
+		n.setBounds(100, 100, 600, 300);
+		n.setVisible(true);
+		
+		 
+	 }
+	 
+	 
+
+}

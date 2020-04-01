@@ -6,13 +6,13 @@ import java.util.Scanner;
 public class Generic<E>
 {
     public static void main(String[] args) 
-    {
+    {        
         Scanner myObj = new Scanner(System.in);
         System.out.println("The string is: ");
         String text = myObj.nextLine();
         System.out.println("The string is: " + text);
         Map<String, Integer> unique = new LinkedHashMap<String, Integer>();
-        for (String string : "Vadim, Daniela, Daniela, Ion, Ion, Vadim, Ion".split(", ")) {
+        for (String string : text.split("\\W+")) {
             if(unique.get(string) == null)
                 unique.put(string, 1);
             else

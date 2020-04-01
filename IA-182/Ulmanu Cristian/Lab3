@@ -1,0 +1,391 @@
+package lab3tap;
+
+
+import java.awt.*; 
+import javax.swing.*; 
+import java.awt.event.*; 
+class Triunghi
+{
+	double a,b,c;
+	public Triunghi(double a,double b, double c)
+	{
+		this.a=a;
+		this.b=b;
+		this.c=c;
+	}
+	public double perimetru()
+	{
+		return a+b+c;
+	}
+	public double area()
+	{
+		double p=(a+b+c)/2;
+		return Math.sqrt(p*(p-a)*(p-b)*(p-c));
+	}
+}
+class Patrat
+{
+	double a;
+	public Patrat(double a)
+	{
+		this.a=a;
+	}
+	public double perimetru() {
+		return a*4;
+	}
+	public double area() {
+		return a*a;
+	}
+}
+class Dreptunghi
+{
+	double a,b;
+	public Dreptunghi(double a,double b)
+	{
+		this.a=a;
+		this.b=b;
+	}
+	public double perimetru()
+	{
+		return 2*a+2*b;
+	}
+	public double area()
+	{
+		return a*b;
+	}
+	
+}
+class Piramida extends Triunghi
+{
+	double ap,h;
+	public Piramida(double a,double b,double c)
+	{
+		super(a,b,c);
+		double p=(a+b+c)/2;
+		
+		this.ap=Math.sqrt(p*(p-a)*(p-b)*(p-c))*2/c;
+		
+		this.h=c*c-(c*Math.sqrt(2)/2)*(c*Math.sqrt(2)/2);
+	}
+	public double volumul()
+	{
+		return (c*c*h)/3;
+	}
+	public double areatotal()
+	{
+		return c*c+4*c*ap/2;
+	}
+}
+class Cub extends Patrat
+{
+	public Cub(double a)
+	{
+		super(a);
+	}
+	public double volumul()
+	{
+		return a*a*a;
+	}
+	public double areatotal()
+	{
+		return 6*a*a;
+	}
+}
+
+class Paralelipiped extends Dreptunghi
+{
+	double h;
+	public Paralelipiped(double a,double b, double h)
+	{
+		super(a,b);
+		this.h=h;
+	}
+	public double volum()
+	{
+		return a*b*h;
+	}
+	public double areatotal()
+	{
+		return 2*(a*h+b*h+a*b);
+	}
+}
+class Demo extends JFrame { 
+  
+    // Declaration of object of JRadioButton class. 
+    JRadioButton jRadioButton1; 
+  
+    // Declaration of object of JRadioButton class. 
+    JRadioButton jRadioButton2; 
+    JRadioButton jRadioButton3; 
+    // Declaration of object of JButton class. 
+    JButton jButton;
+    JButton jButton1;
+  
+    // Declaration of object of ButtonGroup class. 
+    ButtonGroup G1; 
+  
+    // Declaration of object of  JLabel  class. 
+    JLabel L1; 
+    JLabel o1;
+    JLabel o2;
+    JLabel o3;
+    JTextField t1;
+    JTextField t2;
+    JTextField t3;
+     JTextArea com;
+  
+    // Constructor of Demo class. 
+    public Demo() 
+    { 
+  
+        // Setting layout as null of JFrame. 
+        this.setLayout(null); 
+  
+        // Initialization of object of "JRadioButton" class. 
+        jRadioButton1 = new JRadioButton(); 
+  
+        // Initialization of object of "JRadioButton" class. 
+        jRadioButton2 = new JRadioButton(); 
+        jRadioButton3 = new JRadioButton(); 
+  
+        // Initialization of object of "JButton" class. 
+        jButton = new JButton("Click"); 
+  
+        // Initialization of object of "ButtonGroup" class. 
+        G1 = new ButtonGroup(); 
+  
+        // Initialization of object of " JLabel" class. 
+        L1 = new JLabel("Alegeti figura"); 
+  
+        
+        jRadioButton1.setText("Triunghi"); 
+  
+        
+        jRadioButton2.setText("Patrat"); 
+  
+        jRadioButton3.setText("Dreptunghi"); 
+        // Setting Bounds of "jRadioButton2". 
+        jRadioButton1.setBounds(120, 30, 120, 50); 
+  
+        // Setting Bounds of "jRadioButton4". 
+        jRadioButton2.setBounds(250, 30, 80, 50); 
+        jRadioButton3.setBounds(380, 30, 150, 50); 
+  
+        // Setting Bounds of "jButton". 
+        jButton.setBounds(125, 90, 80, 30); 
+        
+  
+        // Setting Bounds of JLabel "L2". 
+        L1.setBounds(20, 30, 150, 50); 
+  
+        // "this" keyword in java refers to current object. 
+        // Adding "jRadioButton2" on JFrame. 
+        this.add(jRadioButton1); 
+  
+        // Adding "jRadioButton4" on JFrame. 
+        this.add(jRadioButton2); 
+        this.add(jRadioButton3); 
+  
+        // Adding "jButton" on JFrame. 
+        this.add(jButton); 
+  
+        // Adding JLabel "L2" on JFrame. 
+        this.add(L1); 
+  
+        // Adding "jRadioButton1" and "jRadioButton3" in a Button Group "G2". 
+        G1.add(jRadioButton1); 
+        G1.add(jRadioButton2); 
+        G1.add(jRadioButton3);
+       
+		o1=new JLabel("a");
+		o2=new JLabel("b");
+		o3=new JLabel("c");
+		t1 = new JTextField(5); 
+		t2 = new JTextField(5);
+		t3 = new JTextField(5);
+		 o1.setBounds(20, 150, 50, 25); 
+		 t1.setBounds(80, 150, 60, 25); 
+		this.add(o1);
+		this.add(t1);
+		
+		 o2.setBounds(150, 150, 50, 25); 
+		 t2.setBounds(210, 150, 60, 25); 
+		this.add(o2);
+		this.add(t2);
+		
+		 o3.setBounds(280, 150, 50, 25); 
+		 t3.setBounds(350, 150, 60, 25); 
+		this.add(o3);
+		this.add(t3);
+		
+		jButton1=new JButton("Calculeaza");
+		jButton1.setBounds(20, 200, 200, 30);
+		this.add(jButton1);
+		com=new JTextArea("");
+		com.setBounds(20,240,500,300);
+		this.add(com);
+        // Adding Listener to JButton. 
+        jButton.addActionListener(new ActionListener() { 
+            // Anonymous class. 
+  
+            public void actionPerformed(ActionEvent e) 
+            { 
+                // Override Method 
+  
+                // Declaration of String class Objects. 
+                String qual = " "; 
+  
+                // If condition to check if jRadioButton2 is selected. 
+                if (jRadioButton1.isSelected()) { 
+                	o1.setVisible(true);
+                	t1.setVisible(true);
+                	o2.setVisible(true);
+                	t2.setVisible(true);
+                	o3.setVisible(true);
+                	t3.setVisible(true);
+                	
+                    
+                } 
+  
+                else if (jRadioButton2.isSelected()) { 
+                	o1.setVisible(true);
+                	t1.setVisible(true);
+                	o2.setVisible(true);
+                	t2.setVisible(true);
+                	o3.setVisible(true);
+                	t3.setVisible(true);
+                	
+                	o2.setVisible(false);
+                	t2.setVisible(false);
+                	o3.setVisible(false);
+                	t3.setVisible(false);
+                	
+                   
+                } 
+                else { 
+  
+                	o1.setVisible(true);
+                	t1.setVisible(true);
+                	o2.setVisible(true);
+                	t2.setVisible(true);
+                	o3.setVisible(true);
+                	t3.setVisible(true);
+                	
+                	o3.setVisible(false);
+                	t3.setVisible(false);
+                } 
+  
+                // MessageDialog to show information selected radion buttons. 
+               
+            } 
+        }); 
+        
+        jButton1.addActionListener(new ActionListener() { 
+            // Anonymous class. 
+  
+            public void actionPerformed(ActionEvent e) 
+            { 
+                // Override Method 
+  
+                // Declaration of String class Objects. 
+                String qual = " "; 
+                double a=Double.parseDouble(t1.getText());
+                double b=Double.parseDouble(t2.getText());
+                double c=Double.parseDouble(t3.getText());
+  
+                // If condition to check if jRadioButton2 is selected. 
+                if (jRadioButton1.isSelected()) { 
+             
+                Piramida p=new Piramida(a,b,c);
+                if (a + b <= c || a + c <= b || b + c <= a)
+                {
+                	com.append("\nNu este triunghi");
+                	
+                    
+                }
+                else
+                {
+                	com.selectAll();
+                	com.replaceSelection("");
+                	com.append("Triunghi\n");
+                    com.append("Perimentru=");
+                    com.append(Double.toString(p.perimetru()));
+                    com.append("\nAria=");
+                    com.append(Double.toString(p.area()));
+                    if(a!=b) {
+                    	com.append("\nNu poate crea piramida patrulatera");
+                    }
+                    else 
+                    {
+                    	com.append("\n Piramida patrulatera");
+                        com.append("\nVolum=");
+                        com.append(Double.toString(p.volumul()));
+                        com.append("\n Suprafata totala=");
+                        com.append(Double.toString(p.areatotal()));
+                    }
+                	
+                }
+                
+                
+                	
+                    
+                } 
+  
+                else if (jRadioButton2.isSelected()) { 
+                	Cub cub=new Cub(a);
+                	com.selectAll();
+                	com.replaceSelection("");
+                	com.append("\nPatrat\n");
+                    com.append("Perimentru=");
+                    com.append(Double.toString(cub.perimetru()));
+                    com.append("\nAria=");
+                    com.append(Double.toString(cub.area()));
+                    
+                	com.append("\n Cub");
+                    com.append("\nVolum=");
+                    com.append(Double.toString(cub.volumul()));
+                    com.append("\n Suprafata totala=");
+                    com.append(Double.toString(cub.areatotal()));
+                   
+                } 
+                else { 
+                	Paralelipiped pl=new Paralelipiped(a,b,a);
+                	com.selectAll();
+                	com.replaceSelection("");
+                	com.append("\nDreptunghi\n");
+                    com.append("Perimentru=");
+                    com.append(Double.toString(pl.perimetru()));
+                    com.append("\nAria=");
+                    com.append(Double.toString(pl.area()));
+                    
+                	com.append("\n Paralelipiped");
+                    com.append("\nVolum=");
+                    com.append(Double.toString(pl.volum()));
+                    com.append("\n Suprafata totala=");
+                    com.append(Double.toString(pl.areatotal()));
+                
+                } 
+  
+                // MessageDialog to show information selected radion buttons. 
+               
+            } 
+        });
+    } 
+} 
+  
+public class lab3 { 
+    // Driver code. 
+    public static void main(String args[]) 
+    { // Creating object of demo class. 
+        Demo f = new Demo(); 
+  
+        // Setting Bounds of JFrame. 
+        f.setBounds(100, 100, 800, 700); 
+  
+        // Setting Title of frame. 
+        f.setTitle("RadioButtons"); 
+  
+        // Setting Visible status of frame as true. 
+        f.setVisible(true); 
+    } 
+} 
