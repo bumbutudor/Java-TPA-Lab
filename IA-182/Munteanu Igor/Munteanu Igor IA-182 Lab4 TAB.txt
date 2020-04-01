@@ -1,3 +1,5 @@
+Varianta 7: Polynom -> ComplexPolynom.
+//--------------------------------------------------------------------
 package com.student.utm;
 import java.util.*;
 
@@ -55,6 +57,7 @@ public class Polynom
         Scanner in = new Scanner(System.in) ;
         System.out.println("Input polynom grade: ");
         degreeP = in.nextInt();
+        if (degreeP==0){throw new IllegalArgumentException("Gradul nu poate fi egal cu 0");}
         Polynom p = new Polynom(degreeP);
         p.inputCoeff();
         p.output();
@@ -241,3 +244,10 @@ public class Polynom
         }while(true);
     }
 }
+
+//-------------------------------------------------------------------------------------
+
+Cocluzii:
+In urma efectuarii acestei lucrari de laborator am obtinut abilitati in mostenire , dar in special ceea ce tine de polimorfism.
+Sarcina a fost de a crea clasa Polinom si clasa Polinom Complex care au fost create si testate cu succes.
+Acest laborator imi fi util la intelegerea mai profunda a mostenirii si polimorfismului.
