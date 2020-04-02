@@ -1,5 +1,5 @@
 import java.util.Date;
-
+//var 1,2
 public class lab3 {
 
     interface Persoana{

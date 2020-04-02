@@ -1,6 +1,7 @@
 import java.util.Random;
 import java.util.Scanner;
 
+//Varianta 10
 
 public class Ver1 {
 

@@ -1,6 +1,8 @@
 import java.util.EmptyStackException;
 import java.util.Stack;
 
+//varianata 8
+
 public class Test {
 
     public static class StackClass{
