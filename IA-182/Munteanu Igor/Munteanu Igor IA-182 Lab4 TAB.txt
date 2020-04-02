@@ -1,142 +1,241 @@
+Varianta 7: Polynom -> ComplexPolynom.
+//--------------------------------------------------------------------
 package com.student.utm;
 import java.util.*;
 
-public class ComplexPolynom
+public class Polynom
 {
-    private int[] coeff;
-    private int deg;
-    private ComplexPolynom(int n)
+     int[] coeff;
+     int degree;
+
+    Polynom(int n)
     {
-        deg = n;
-        coeff = new int[deg+1];
-        for(int i = 0; i < deg+1; i++)
+        degree = n;
+        coeff = new int[degree + 1];
+        for(int i = 0; i < degree + 1; i++)
+        {
             coeff[i] = 0;
+        }
     }
-    //Coeficientul nul
-    private void inputCoeff()
+    void inputCoeff()
     {
         Scanner in = new Scanner(System.in);
         System.out.println("Enter coefficient: ");
-        for(int i = 0; i < deg+1; i++)
+        for(int i = 0; i < degree + 1; i++)
         {
-            System.out.print("coeff[" + i + "] = ");
+            System.out.println("coeff[" + i + "] = ");
             coeff[i] = in.nextInt();
             System.out.println();
         }
     }
-    private void setCoeff(int index, int x)
+    void setCoeff(int index, int x)
     {
         coeff[index] = x;
     }
-    private int getCoeff(int index)
+    int getCoeff(int index)
     {
+        if(coeff[index] > coeff[index] || !(coeff[index] > coeff[index]) ){throw new ArrayIndexOutOfBoundsException(" Iesire din limita de alocare !!! ");}
         return coeff[index];
     }
-    private int getDeg()
+    int getDegree()
     {
-        return deg;
+        return  degree;
     }
-    //Intoarcem polinomul obtinut la sumarea coeficientilor
-    private static ComplexPolynom sum(ComplexPolynom p1, ComplexPolynom p2)
+    private void output()
     {
-        int tempDeg;
-        if(p1.getDeg() < p2.getDeg())
-            tempDeg = p1.getDeg();
-        else
-            tempDeg = p2.getDeg();
-        ComplexPolynom tempP = new ComplexPolynom(tempDeg);
-        for(int i = 0; i < tempDeg+1; i++)
-            tempP.setCoeff(i, p1.getCoeff(i) + p2.getCoeff(i));
-        tempP.output();
-        return tempP;
+        for(int i = 0; i < degree + 1; i++)
+        {
+            System.out.printf("%d*X(%d)",coeff[i],i);
+            if(i < degree)
+                System.out.print("+");
+        }
+        System.out.println();
     }
-    //intoarcem polinomul obtinul la diferenta coeficientilor
-    private static ComplexPolynom difference(ComplexPolynom p1, ComplexPolynom p2)
+    private static Polynom inputPolynom()
     {
-        int tempDeg;
-        if(p1.getDeg() > p2.getDeg())
-            tempDeg = p1.getDeg();
-        else
-            tempDeg = p2.getDeg();
-        ComplexPolynom tempP = new ComplexPolynom(tempDeg);
-        for(int i = 0; i < tempDeg+1; i++)
-            tempP.setCoeff(i, p1.getCoeff(i) - p2.getCoeff(i));
-        tempP.output();
-        return tempP;
-    }
-
-    //Afisam polinomul primit la inmultire
-    private static ComplexPolynom multiply(ComplexPolynom p1, ComplexPolynom p2)
-    {
-        int tempDeg = p1.getDeg()+p2.getDeg();
-        ComplexPolynom tempP = new ComplexPolynom(tempDeg);
-        for(int i = 0; i < p1.getDeg()+1; i++)
-            for (int j = 0; j < p2.getDeg()+1; j++)
-                tempP.setCoeff(i + j, tempP.getCoeff(i + j) + p1.getCoeff(i) * p2.getCoeff(j));
-        tempP.output();
-        return tempP;//clone
-    }
-    //Metoda pentru initializarea polinomului
-    private static ComplexPolynom inputPolynom()
-    {
-        Scanner in = new Scanner(System.in);
-        System.out.print("Introduceti gradul polinomului : ");
-        int degP = in.nextInt();
-        ComplexPolynom p = new ComplexPolynom(degP);
+        int degreeP;
+        Scanner in = new Scanner(System.in) ;
+        System.out.println("Input polynom grade: ");
+        degreeP = in.nextInt();
+        if (degreeP==0){throw new IllegalArgumentException("Gradul nu poate fi egal cu 0");}
+        Polynom p = new Polynom(degreeP);
         p.inputCoeff();
         p.output();
         return p;
     }
-    //Afisarea polinomului
-    private void output()
+    private static Polynom sum(Polynom p1, Polynom p2)
     {
-        for(int i = 0; i < deg+1; i++)
+        int tempDegree = Math.min(p1.getDegree(), p2.getDegree());
+        Polynom tempP = new Polynom(tempDegree);
+        for(int i = 0; i < tempDegree + 1; i++)
         {
-            System.out.printf("%di*X(%d)", coeff[i], i);
-            if(i < deg)
-                System.out.print("+");
+            tempP.setCoeff(i,p1.getCoeff(i)+p2.getCoeff(i));
         }
-        System.out.println();
+        tempP.output();
+        return tempP;
+    }
+    private static Polynom difference(Polynom p1, Polynom p2)
+    {
+        int tempDegree = Math.max(p1.getDegree(), p2.getDegree());
+        Polynom tempP = new Polynom(tempDegree);
+        for(int i = 0; i < tempDegree + 1; i++)
+        {
+            tempP.setCoeff(i,p1.getCoeff(i)+p2.getCoeff(i));
+        }
+        tempP.output();
+        return tempP;
+    }
+    private static Polynom multiply(Polynom p1, Polynom p2)
+    {
+        int tempDegree = p1.getDegree() + p2.getDegree();
+        Polynom tempP = new Polynom(tempDegree);
+        for(int i = 0; i < p1.getDegree() + 1; i++)
+        {
+            for(int j =0; j < p2.getDegree() + 1; j++)
+            {
+                tempP.setCoeff(i + j,tempP.getCoeff(i + j) + p1.getCoeff(i) * p2.getCoeff(j));
+            }
+        }
+        tempP.output();
+        return tempP;
+    }
+    static class ComplexPolynom extends Polynom
+    {
+        ComplexPolynom(int degree,int[] coeff,int n)
+        {
+            super(n);
+            super.degree = degree;
+            super.coeff = coeff;
+            degree = n;
+            coeff = new int[degree +1];
+            for(int i = 0; i < degree +1; i++)
+            {
+                coeff[i] = 0;
+            }
+        }
+
+        ComplexPolynom(int tempDegree)
+        {
+            super(tempDegree);
+        }
+
+        void output()
+        {
+            for(int i = 0; i < degree + 1; i++)
+            {
+                System.out.printf("%di*X(%d)", coeff[i], i);
+                if(i < degree)
+                    System.out.print("+");
+            }
+            System.out.println();
+        }
+        private static ComplexPolynom inputPolynom()
+        {
+            int degreeP;
+            Scanner in = new Scanner(System.in) ;
+            System.out.println("Input polynom grade: ");
+            degreeP = in.nextInt();
+                if (degreeP==0){throw new IllegalArgumentException("Gradul nu poate fi egal cu 0");}
+            ComplexPolynom c = new ComplexPolynom(degreeP);
+            c.inputCoeff();
+            c.output();
+            return c;
+        }
+        private static ComplexPolynom sum(ComplexPolynom p1, ComplexPolynom p2)
+        {
+            int tempDegree = Math.min(p1.getDegree(), p2.getDegree());
+            ComplexPolynom tempP = new ComplexPolynom(tempDegree);
+            for(int i = 0; i < tempDegree + 1; i++)
+                tempP.setCoeff(i, p1.getCoeff(i) + p2.getCoeff(i));
+            tempP.output();
+            return tempP;
+        }
+        private static ComplexPolynom difference(ComplexPolynom p1, ComplexPolynom p2)
+        {
+            int tempDeg = Math.max(p1.getDegree(), p2.getDegree());
+            ComplexPolynom tempP = new ComplexPolynom(tempDeg);
+            for(int i = 0; i < tempDeg+1; i++)
+                tempP.setCoeff(i, p1.getCoeff(i) - p2.getCoeff(i));
+            tempP.output();
+            return tempP;
+        }
+        private static ComplexPolynom multiply(ComplexPolynom p1, ComplexPolynom p2)
+        {
+            int tempDeg = p1.getDegree()+p2.getDegree();
+            ComplexPolynom tempP = new ComplexPolynom(tempDeg);
+            for(int i = 0; i < p1.getDegree()+1; i++)
+                for (int j = 0; j < p2.getDegree()+1; j++)
+                    tempP.setCoeff(i + j, tempP.getCoeff(i + j) + p1.getCoeff(i) * p2.getCoeff(j));
+            tempP.output();
+            return tempP;//clone
+        }
     }
 
     public static void main(String[] args)
     {
         int choose = 0;
         ComplexPolynom p1 = null, p2 = null, pResult = null;
+        Polynom c1 = null, c2 = null, cResult = null;
         Scanner in = new Scanner(System.in);
         do{
-            System.out.println("1. Enter polynom grade");
-            System.out.println("2. Get Sum");
-            System.out.println("3. Get Difference ");
-            System.out.println("4. Get Multiply");
+            System.out.println("1. Enter Polynom ");
+            System.out.println("2. Get Polynom Sum");
+            System.out.println("3. Get Polynom Difference ");
+            System.out.println("4. Get Polynom Multiply");
             System.out.println("5. Get Polynoms");
-            System.out.println("6. Exit");
+            System.out.println("6. Enter Complex Polynom");
+            System.out.println("7. Get Complex Polynom Sum");
+            System.out.println("8. Get Complex Polynom Difference ");
+            System.out.println("9. Get Complex Polynom  Multiply");
+            System.out.println("10. Get Complex Polynoms");
+            System.out.println("11. Exit");
             System.out.print("Enter number of menu: ");
             choose = in.nextInt();
             switch(choose)
             {
                 case 1:
-                    System.out.println("Polynom p1.");
-                    p1 = inputPolynom();
-                    System.out.println("Polynom p2.");
-                    p2 = inputPolynom();
+                    System.out.println("Polynom c1.");
+                    c1 = inputPolynom();
+                    System.out.println("Polynom c2.");
+                    c2 = inputPolynom();
                     break;
                 case 2:
-                    pResult = sum(p1, p2);
+                    cResult = sum(c1, c2);
                     break;
                 case 3:
-                    pResult = difference(p1, p2);
+                    cResult = difference(c1, c2);
                     break;
                 case 4:
-                    pResult = multiply(p1, p2);
+                    cResult = multiply(c1, c2);
                     break;
                 case 5:
-                    System.out.println("Polynom p1.");
-                    p1.output();
-                    System.out.println("Polynom p2.");
-                    p2.output();
+                    System.out.println("Polynom c1.");
+                    c1.output();
+                    System.out.println("Polynom c2.");
+                    c2.output();
                     break;
                 case 6:
+                    System.out.println("Complex Polynom p1.");
+                    p1 = ComplexPolynom.inputPolynom();
+                    System.out.println("Complex Polynom p2.");
+                    p2 = ComplexPolynom.inputPolynom();
+                    break;
+                case 7:
+                    pResult = ComplexPolynom.sum(p1,p2);
+                    break;
+                case 8:
+                    pResult = ComplexPolynom.difference(p1,p2);
+                    break;
+                case 9:
+                    pResult = ComplexPolynom.multiply(p1,p2);
+                    break;
+                case 10:
+                    System.out.println("Complex Polynom p1.");
+                    p1.output();
+                    System.out.println("Complex Polynom p2.");
+                    p2.output();
+                    break;
+                case 11:
                     System.exit(0);
                     break;
                 default:
@@ -146,4 +245,9 @@ public class ComplexPolynom
     }
 }
 
-In urma aceste lucrari de laborator am creat clasa ComplexPolynom care sumeaza,inmultiste si imparteste doi polinomi, deasemenea am utilizat in laborator si polimorfismul.
+//-------------------------------------------------------------------------------------
+
+Cocluzii:
+In urma efectuarii acestei lucrari de laborator am obtinut abilitati in mostenire , dar in special ceea ce tine de polimorfism.
+Sarcina a fost de a crea clasa Polinom si clasa Polinom Complex care au fost create si testate cu succes.
+Acest laborator imi fi util la intelegerea mai profunda a mostenirii si polimorfismului.
