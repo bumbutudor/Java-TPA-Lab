@@ -34,7 +34,7 @@ Lab 5:
 Link - https://github.com/civera17/Lab5Java
 
 Lab 6:
-Link - https://github.com/civera17/Lab1Grafica
+Link - https://github.com/civera17/demo-spring-mvc
 
 Lab 7:
 Link - https://github.com/civera17/Lab5Java (Aici am facut si 5 si 7 , ambele task cu Stack)
