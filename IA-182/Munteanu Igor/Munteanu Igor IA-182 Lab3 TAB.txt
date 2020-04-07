@@ -1,0 +1,88 @@
+//V7.Clasa File, astfel încât să se poată deduce timpul si data creării obiectului.
+//---------------------------------------------------------------------
+package com.student.utm;
+import java.util.Date;
+
+public class lab3
+{
+
+    interface Car
+    {
+        String name = "Ford F-150 Raptor";
+        int horse_power = 435;
+        int speed = 310;
+        String color = "Green";
+        int year = 2016;
+        String create();
+    }
+
+    public static class Methods implements Car
+    {
+
+        public String create()
+        {
+            Date date = new Date();
+            return ("\nWhen object was created:\n"+ date.toString()+
+                    "\nTime in milliseconds:"+System.currentTimeMillis()+
+                    "\n-------------------------------------");
+
+        }
+    }
+
+    public static class Car2 extends Methods
+    {
+
+        String name,about,color;
+        int horse_power;
+        int speed;
+        int year;
+
+        Car2()
+        {
+            about = create();
+            System.out.println(about);
+        }
+
+        Car2(String name, int horse_power,int speed,String color,int year)
+        {
+            this.name = name;
+            this.horse_power = horse_power;
+            this.speed = speed;
+            this.color = color;
+            this.year = year;
+            about = create();
+            System.out.println(about);
+        }
+
+        void show()
+        {
+            System.out.println("Method to show new object:");
+            System.out.println("Name:" +name +
+                    "\n" + "Horse Power:" + horse_power + "HP\n"
+                    + "Speed:" + speed + "Km/h\n" +
+                    "Color:" + color + "Year:" + year +
+                    "\n");
+        }
+        void showDefault(){
+            System.out.println("Method to show default data:");
+            System.out.println("Name:" + Car.name + "\n"
+                    + "Horse Power:" + Car.horse_power + "HP\n"
+                    + "Speed:" +Car.speed+ "Km/h\n" +
+                    "Color:" + Car.color + "Year:" + Car.year);
+        }
+    }
+
+    public static void main(String[] args)
+    {
+        Car2 s1 = new Car2("Ford Mustang GT 500 Shelby",900,310,"Red",2020);
+        s1.show();
+        System.out.println("-------------------------------------");
+        Car2 s2 = new Car2();
+        s2.showDefault();
+        System.out.print("-------------------------------------");
+    }
+}
+//-----------------------------------------------------------------------------------------------
+Concluzii: 
+In urma efectuarii de laborator noi am insușit principiile de moștenire a parametrilor din superclasa și le-am utilizat la crearea  funcțiilor.
+Aceste cunoștințe îmi vor fi de folos pentru crearea unor aplicații mai complexe.

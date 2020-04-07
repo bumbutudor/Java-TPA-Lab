@@ -1,0 +1,50 @@
+//6.Efectuaţi o sumare în pereche pentru orice secvenţă finită de numere construite pe baza de colectii, 
+//după cum urmează: în prima etapă, se adună  perechi de numere, la a doua etapă, se sumează perechi de rezultate a primei etape şi a.m.d.
+// până  când rămîne un rezultat. Dacă la sfîrşitul etapei rămîne număr fără pereche, el trece în etapa următoare.
+//-------------------------------------------------------------------------------------------------------------------------------------------
+package com.student.utm;
+import java.util.*;
+import java.lang.*;
+import java.util.Arrays;
+import java.util.ArrayList;
+
+public class Main
+{  
+    private static List<Integer> arr = new ArrayList<>(Arrays.asList(1,2,3,4,5,6,7,8));
+    public static void main(String[] args)
+    {
+        getSumNeighbors(arr);
+    }
+    private static void getSumNeighbors(List<Integer> nums)
+    {
+        if (nums.size() == 2) {
+            System.out.println("Intermediate Sum Values: " + nums);
+            System.out.println("Final Sum = " + (nums.get(0) + nums.get(1)));
+            return;
+        }
+        System.out.println("Intermediate Values: " + nums);
+      
+        int j = 0;
+        int c = 0;
+        for (int i = 0; i < nums.size(); i++)
+        {
+            c = nums.get(j) + nums.get(j + 1);
+            nums.remove(j);
+            nums.remove(j);
+            nums.add(c);
+            j = 0;
+            c = 0;
+        }
+
+        getSumNeighbors(nums);
+    }
+}
+//------------------------------------------------------------------------------------------
+Concluzii: 
+In urma efectuarii acestei lucrări de laborator am însușit noțiuni referitoare la colecții și tipurile de colecții care pot fi utilizate.
+Colecţie reprezintă o realizare de tipuri abstracte (structuri) de date, care realizează două operaţii de bază: 
+introduce un element nou în colectie și şterge elementul din colecţie.
+Colecţiile sunt unite într-o bibliotecă de clase  java.util, şi reprezinta containere pentru depozitarea şi manipularea obiectelor.
+Colectii - sunt tablouri dinamice, liste legate, arbori, seturi, stive, cozi.
+Cu aceste cunoștințe voi putea utiliza colecțiile în crearea aplicațiilor mult mai efectiv.
+
