@@ -1,1 +1,1 @@
-În urma realizării lucrării de laborator  am creat Superclasa (useTime) și Subclasa (Stack). Ulterior am realizat moștenirea de la Superclasă în așa fel ca Subclasa să aibă posibilitatea de a obține timpul curent al orei la care a fost creat. 
+In urma efectuarii lucrarii de laborator am capatat deprinderi practice cu Mostenirea.
