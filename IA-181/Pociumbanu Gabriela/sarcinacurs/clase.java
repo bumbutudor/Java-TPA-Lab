@@ -1,3 +1,5 @@
+package sarcinacurs;
+
 import static java.lang.System.out;
 
 class Dreptunghi
@@ -16,7 +18,7 @@ class Dreptunghi
 
         this.latime = lat;
 
-        out.println ("A fost creat un Dreptunghi cu lungimea " + lung +
+        out.println ("A fost creat un sarcinacurs.Dreptunghi cu lungimea " + lung +
                 " si latimea " + lat);
     }
 }
@@ -27,8 +29,8 @@ class Paralalepipid extends Dreptunghi
     public Paralalepipid(double lat, double lung, double inal) {
         super(lung, lat);
         inaltimea=inal;
-        out.println ("A fost creat un Paralalepipid cu inaltimea " + inaltimea +
-                " si latimea "+latime+" si lungime "+lungime+" de la Dreptunghi");
+        out.println ("A fost creat un sarcinacurs.Paralalepipid cu inaltimea " + inaltimea +
+                " si latimea "+latime+" si lungime "+lungime+" de la sarcinacurs.Dreptunghi");
 
     }
     public Paralalepipid (double x){
