@@ -1,5 +1,6 @@
-Varianta 7: Polynom -> ComplexPolynom.
-//--------------------------------------------------------------------
+//V7. Crearea exceptiilor
+//Polynom -> ComplexPolynom
+//--------------------------------------------------------------
 package com.student.utm;
 import java.util.*;
 
@@ -254,11 +255,9 @@ public class Polynom
         }while(true);
     }
 }
+//----------------------------------------------------------------------------------------
+Concluzii: 
+In urma efectuarii acestei lucrări de laborator am insușit ce sunt excepțiile, cum pot fi create și tratate într-o aplicație. 
+Când o excepţie este generată întotdeauna este creat un obiect de tip corespunzător, care trebuie să fie  prelucrat de către un anumit  bloc de cod.
+Atunci când se creează o metodă  prelucrarea excepţiei poate fi  inclusă  în codul, care poate genera această metodă.
 
-
-//-------------------------------------------------------------------------------------
-
-Cocluzii:
-In urma efectuarii acestei lucrari de laborator am obtinut abilitati in mostenire , dar in special ceea ce tine de polimorfism.
-Sarcina a fost de a crea clasa Polinom si clasa Polinom Complex care au fost create si testate cu succes.
-Acest laborator imi fi util la intelegerea mai profunda a mostenirii si polimorfismului.
