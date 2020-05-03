@@ -1,26 +1,35 @@
+/*
+5.Annotation, astfel încât să se poată deduce timpul in secunde de la ultima modificare a  annotaţiei.
+ */
+
 package lab3;
 
-import java.awt.*;
-import java.awt.event.*;
-import java.lang.annotation.*;
-import java.util.*;
-import java.util.concurrent.TimeUnit;
-import javax.annotation.*;
+import javax.annotation.Generated;
 import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.Date;
 
 public class lab3 {
     public static void main(String[] arg){
         MyFrame ff = new MyFrame();
         ff.setVisible(true);
-    }}
+    }
+}
 
 class MyAnnotation implements Generated {
+    private String com;
+    private Date dat;
+    private String user;
+
     public MyAnnotation(){
         this.setAnnotation();
     }
     public MyAnnotation(String cCom, String uUser){
         this.setAnnotation(cCom, uUser);
     }
+
     public void setAnnotation(){
         com = "I like quarantine!";
         user = "Gabi";
@@ -31,6 +40,7 @@ class MyAnnotation implements Generated {
         user = uUser;
         dat = new Date();
     }
+
     public String date() {
         return dat.toString();
     }
@@ -40,16 +50,15 @@ class MyAnnotation implements Generated {
     public String users(){
         return user;
     }
+
     public String getAnnotation(){
         String output;
         output = "Autor: " + user + "\n";
         output += "Text: " + com + "\n";
         output += "Data: " + date() + "\n";
+        output += "  \n";
         return output;
     }
-    private String com;
-    private Date dat;
-    private String user;
     public Class <? extends Annotation>  annotationType() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
@@ -58,50 +67,47 @@ class MyAnnotation implements Generated {
     }
 }
 
-class Extindere extends MyAnnotation {
-    private long lStartTime = new Date().getTime();
+//Clasa Annotation extinde clasa MyAnnotation, si adauga timpul de la ultima modificare a anotatiei
+class Annotation extends MyAnnotation {
+    private long lStartTime;
+    private long lEndTime;
+
     @Override
     public void setAnnotation() {
-        super.setAnnotation();
-        try {
-            calculation();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        lStartTime = new Date().getTime();
     }
     @Override
-    public void setAnnotation(java.lang.String cCom, java.lang.String uUser) {
-        super.setAnnotation(cCom, uUser);
-        try {
-            calculation();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+    public void setAnnotation(String cCom, String uUser) {
+        lStartTime = new Date().getTime();
     }
-    public long time() {
-        long lEndTime = new Date().getTime();
-        return (lEndTime - lStartTime)/1000;
-    }
+
     @Override
     public String getAnnotation(){
-        String output = "Time from previous modification in sec: " + time() + "\n";
+        lEndTime = new Date().getTime();
+        String output = "Time from previous modification in sec: " + ((lEndTime - lStartTime)/1000) + "\n";
         output += "====================================\n";
+        lStartTime = new Date().getTime();
         return output;
     }
-    private static void calculation() throws InterruptedException {
-        //Sleep 2 seconds
-        TimeUnit.SECONDS.sleep(2);
-    }
+
 }
 
 class MyFrame extends JFrame {
+    private JTextArea history;
+    private JPanel left, center, right;
+    private JTextField user;
+    private JTextArea com;
+    private JLabel dat;
+    private MyAnnotation ts;
+    private Annotation tin;
+
     public MyFrame(){
-        this.setTitle("LBJ2");
+        this.setTitle("Lab_3");
         this.setSize(600, 500);
         this.setLocation(300, 300);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         ts = new MyAnnotation();
-        Extindere tin = new Extindere();
+        tin = new Annotation();
         user = new JTextField(ts.users(),10);
         left = new JPanel();
         Box b1 = Box.createVerticalBox();
@@ -131,15 +137,10 @@ class MyFrame extends JFrame {
         right.add(history);
         this.add(right,BorderLayout.EAST);
     }
-    private JTextArea history;
-    private JPanel left, center, right;
-    private JTextField user;
-    private JTextArea com;
-    private JLabel dat;
-    private MyAnnotation ts;
 }
 
-/* In aceasta lucrare de laborator am avut ca sarcina sa modific clasa MyAnnotation in asa mod ca la rulare sa se
+/*
+In aceasta lucrare de laborator am avut ca sarcina sa modific clasa MyAnnotation in asa mod ca la rulare sa se
 calculeze diferenta de timp de la fiecare modificare. Initial nu-mi prea reusea. Deoarece nu cunosteam cum sa calculez
 timpul( aveam idei, dar nu stiam cum s-o implementez) + mi-a luat ceva timp sa inteleg programul.
 Dar la final am indeplinit sarcina destul de bine, cred eu. Am lucrat cu suprascriere si cu principiile de mostenire.
