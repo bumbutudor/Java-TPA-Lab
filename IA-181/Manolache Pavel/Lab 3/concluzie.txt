@@ -1,0 +1,1 @@
+Efectuând această lucrare de laborator am studiat un pricipiu de bază al POO, Moștenirea, cum acesta se folosește, la ce ajută și în ce mod poate fi implimentată.
